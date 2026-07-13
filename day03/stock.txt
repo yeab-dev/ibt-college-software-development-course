@@ -1,0 +1,6 @@
+apple,15
+banana,8
+orange,25
+milk,4
+bread,12
+eggs,6
