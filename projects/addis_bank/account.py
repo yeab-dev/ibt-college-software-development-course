@@ -20,4 +20,7 @@ class Account:
         if amount > self.balance:
             raise ValueError("Amount must not exceed the account balance")
         self.__balance -= amount
+    
+    def statement(self):
+        print(f'{self.owner}: {self.balance} ETB')
         
