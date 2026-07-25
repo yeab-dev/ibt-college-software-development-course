@@ -5,17 +5,12 @@ class CurrentAccount(Account):
         super().__init__(owner, account_number, balance)
         self.overdraft = overdraft
     def withdraw(self, amount):
-        if (self.balance < amount + self.overdraft):
+        if amount > self.balance + self.overdraft:
             raise ValueError("Over limit")
+        if amount < 0:
+            raise ValueError("Amount must be non negative")
+        self._deduct(amount)
     
     def statement(self):
         print(f'current: {self.owner}\noverdraft: {self.overdraft} ETB\nbalance: {self.balance}')
 
-bank = [
-    SavingsAccount('Bekele', '10005', 3000, 0.08),
-    CurrentAccount('Betty', '10005', 10000, 2000),
-]
-
-for account in bank:
-    account.deposit(200)
-    account.statement()
