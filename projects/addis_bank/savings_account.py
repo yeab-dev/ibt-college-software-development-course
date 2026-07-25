@@ -6,3 +6,9 @@ class SavingsAccount(Account):
     
     def add_interest(self):
         self.deposit(self.balance * self.rate)
+
+    def statement(self):
+        print(
+            f"Saving Account\n"
+            f"{super().statement()}\n"
+        )

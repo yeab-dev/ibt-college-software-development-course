@@ -21,10 +21,7 @@ class Account:
         if amount > self.balance:
             raise ValueError("Insufficient balance")
 
-        self._deduct(amount)
-
-    def _deduct(self, amount):
         self._balance -= amount
 
     def statement(self):
-        print(f'{self.owner}: {self.balance} ETB')
+        return f'{self.owner}: {self.balance} ETB'
