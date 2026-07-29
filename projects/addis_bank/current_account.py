@@ -1,17 +1,20 @@
 from account import Account
+from bank_config import BankConfig
 class CurrentAccount(Account):
-    def __init__(self, owner, account_number, balance, overdraft: float= 1000):
+    def __init__(self, owner, account_number, balance):
         super().__init__(owner, account_number, balance)
-        self.overdraft = overdraft
     def withdraw(self, amount):
+        config = BankConfig()
         if amount < 0:
             raise ValueError("Amount must be non negative")
-        if amount > self.balance + self.overdraft:
-            raise ValueError("Over limit")
-        self._balance -= amount
+        if self.balance - amount >= -config.overdraft_limit:
+            self._balance -= amount
+            self._notify("Withdrawal")
+
+        else: raise ValueError("Over limit")
     
     def statement(self):
-        print(
+        return (
             f"Current Account\n"
             f"{super().statement()}\n"
             f"Overdraft: {self.overdraft}"
