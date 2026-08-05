@@ -1,5 +1,6 @@
 from collections import deque
-from account import Branch, AccountFactory
+from account_factory import AccountFactory
+from account import Branch
 
 
 def bfs(transfers, start):

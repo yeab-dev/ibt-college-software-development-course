@@ -1,6 +1,4 @@
 from collections import deque
-from savings_account import SavingsAccount
-from current_account import CurrentAccount
 class Account:
     def __init__(self, owner: str, account_number: str, balance: float):
         self.owner = owner
@@ -57,16 +55,6 @@ class Account:
                     queue.append(neighbor)
 
         return reachable
-
-class AccountFactory:
-    @staticmethod
-    def create(kind: str, owner: str, number: str, balance=0):
-        if kind == 'savings':
-            return SavingsAccount(owner, number, balance)
-        if kind == "current":
-            return CurrentAccount(owner, number, balance)
-        raise ValueError(f'unknown type {kind}')
-
 
 class Branch:
     def __init__(self, name):
