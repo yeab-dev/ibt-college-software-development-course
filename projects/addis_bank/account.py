@@ -1,3 +1,4 @@
+from collections import deque
 from savings_account import SavingsAccount
 from current_account import CurrentAccount
 class Account:
@@ -37,6 +38,26 @@ class Account:
     def statement(self):
         return f'{self.owner}: {self.balance} ETB'
 
+    def bfs(transfers, start):
+        visited = set()
+        queue = deque([start])
+        reachable = []
+
+        while queue:
+            account = queue.popleft()
+
+            if account in visited:
+                continue
+
+            visited.add(account)
+            reachable.append(account)
+
+            for neighbor in transfers.get(account, []):
+                if neighbor not in visited:
+                    queue.append(neighbor)
+
+        return reachable
+
 class AccountFactory:
     @staticmethod
     def create(kind: str, owner: str, number: str, balance=0):
@@ -47,4 +68,23 @@ class AccountFactory:
         raise ValueError(f'unknown type {kind}')
 
 
-account = AccountFactory.create("savings", 'YB', '1001', 5000)
+class Branch:
+    def __init__(self, name):
+        self.name = name
+        self.children = []      # Sub-branches
+        self.accounts = []      # Accounts in this branch
+
+    def add_child(self, branch):
+        self.children.append(branch)
+
+    def add_account(self, account):
+        self.accounts.append(account)
+
+    # Recursive function
+    def total_balance(self):
+        total = sum(account.balance for account in self.accounts)
+
+        for child in self.children:
+            total += child.total_balance()
+
+        return total
