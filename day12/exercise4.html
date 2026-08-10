@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Fixes</title>
+</head>
+
+<body>
+
+    <h1>Accessibility Fixes</h1>
+
+    <h2>1. Div used as a button</h2>
+
+    <!-- INACCESSIBLE:
+         A div is not naturally keyboard-focusable or announced
+         as a button by screen readers. -->
+    <div onclick="submitForm()">Submit</div>
+
+    <!-- FIXED:
+         A real button is keyboard-focusable and announced
+         as a button by screen readers. -->
+    <button type="button">Submit</button>
+
+
+    <h2>2. Unlabelled input</h2>
+
+    <!-- INACCESSIBLE:
+         The input has no label, so screen-reader users may not
+         know what information they are supposed to enter. -->
+    <input type="text" name="name">
+
+    <!-- FIXED:
+         The label gives the input an accessible name, and
+         clicking the label moves focus to the input. -->
+    <label for="name">Full name</label>
+    <input type="text" id="name" name="name">
+
+
+    <h2>3. Image without alt text</h2>
+
+    <!-- INACCESSIBLE:
+         Without alt text, a screen reader cannot tell the user
+         what this image represents. -->
+    <img src="bole-airport.jpg">
+
+    <!-- FIXED:
+         The alt text gives screen-reader users a meaningful
+         description of the image. -->
+    <img
+        src="bole-airport.jpg"
+        alt="Bole International Airport terminal in Addis Ababa"
+    >
+
+</body>
+</html>
