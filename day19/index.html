@@ -3,13 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="demo.js" defer></script>
+    <title>Day 19 - DOM & Events</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <ul>
-        <li class="items">Teff</li>
-        <li class="items">Coffee</li>
-    </ul> 
+
+    <main>
+        <h1 id="title">Day 19 DOM Practice</h1>
+
+        <!-- Exercise 1 -->
+        <section>
+            <h2>Change Color</h2>
+            <button id="change-title">Change Title</button>
+        </section>
+
+        <!-- Exercise 2 -->
+        <section>
+            <h2>Ethiopian Cities</h2>
+            <ul id="city-list"></ul>
+        </section>
+
+        <!-- Exercise 3 -->
+        <section>
+            <h2>Event Bubbling</h2>
+
+            <div id="button-container">
+                <button id="event-button">Click Me</button>
+            </div>
+        </section>
+
+        <!-- Exercise 4 -->
+        <section>
+            <h2>Delete Items</h2>
+
+            <ul id="item-list">
+                <li>
+                    Laptop
+                    <button class="delete-btn">Delete</button>
+                </li>
+
+                <li>
+                    Keyboard
+                    <button class="delete-btn">Delete</button>
+                </li>
+
+                <li>
+                    Mouse
+                    <button class="delete-btn">Delete</button>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Exercise 5 -->
+        <section>
+            <h2>Add an Item</h2>
+
+            <form id="add-form">
+                <input
+                    type="text"
+                    id="item-input"
+                    placeholder="Enter an item"
+                >
+                <button type="submit">Add</button>
+            </form>
+
+            <ul id="submitted-items"></ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
