@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./app.js" defer></script>
+</head>
+<body>
+    <h1>Birr Watch</h1> 
+    <main>
+        <div id="hero-card">
+            <p id="status">Loading rates...</p>
+            
+            <form id="convert-form">
+                <input id="amount" type="number" value="100">
+                <select id="currency" name="currency" title="select currency"></select>
+                <button type="submit" id="convert">Convert</button>
+                <div id="svbtn">
+                    <button type="button" id="watch">Save</button>
+                </div>
+            </form>
+            <p id="result"></p>
+            <div id="watchlistDiv">
+                <h2>Watchlist</h2>
+                <ul id="watchlist"></ul>
+            </div>
+        </div>
+        
+    </main>
+</body>
+</html>
