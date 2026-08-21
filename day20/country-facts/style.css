@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#searchForm {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#countryInput {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#facts {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.fact {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.fact strong {
+    display: inline-block;
+    min-width: 110px;
+}
+
+.flag {
+    display: block;
+    width: 200px;
+    margin: 20px auto 0;
+    border: 1px solid #ddd;
+}
+
+.error {
+    text-align: center;
+    font-weight: bold;
+}
