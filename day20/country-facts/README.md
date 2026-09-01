@@ -58,7 +58,7 @@ The application checks `res.ok` after fetching the API.
 
 Network errors and HTTP errors are handled using `try/catch`.
 
-## Example
+## **Example**
 
 Searching for:
 
