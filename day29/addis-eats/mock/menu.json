@@ -1,0 +1,119 @@
+[
+  {
+    "id": 1,
+    "name": "Doro Wat",
+    "price": 240,
+    "currency": "ETB",
+    "category": "Main",
+    "spicy": true,
+    "description": "Slow-cooked chicken in berbere sauce with a boiled egg."
+  },
+  {
+    "id": 2,
+    "name": "Shiro",
+    "price": 120,
+    "currency": "ETB",
+    "category": "Main",
+    "spicy": false,
+    "description": "Ground chickpea stew simmered with garlic and onion."
+  },
+  {
+    "id": 3,
+    "name": "Tibs",
+    "price": 180,
+    "currency": "ETB",
+    "category": "Main",
+    "spicy": true,
+    "description": "Pan-fried beef cubes with rosemary, onion and jalapeno."
+  },
+  {
+    "id": 4,
+    "name": "Kitfo",
+    "price": 260,
+    "currency": "ETB",
+    "category": "Main",
+    "spicy": true,
+    "description": "Minced raw beef folded into spiced niter kibbeh."
+  },
+  {
+    "id": 5,
+    "name": "Beyaynetu",
+    "price": 150,
+    "currency": "ETB",
+    "category": "Main",
+    "spicy": false,
+    "description": "A fasting platter of six vegetable stews on injera."
+  },
+  {
+    "id": 6,
+    "name": "Injera",
+    "price": 40,
+    "currency": "ETB",
+    "category": "Side",
+    "spicy": false,
+    "description": "Two rolls of teff flatbread, fresh off the mitad."
+  },
+  {
+    "id": 7,
+    "name": "Ayib",
+    "price": 60,
+    "currency": "ETB",
+    "category": "Side",
+    "spicy": false,
+    "description": "Mild fresh cheese that cools down a spicy plate."
+  },
+  {
+    "id": 8,
+    "name": "Gomen",
+    "price": 70,
+    "currency": "ETB",
+    "category": "Side",
+    "spicy": false,
+    "description": "Collard greens sauteed with garlic and ginger."
+  },
+  {
+    "id": 9,
+    "name": "Buna",
+    "price": 50,
+    "currency": "ETB",
+    "category": "Drink",
+    "spicy": false,
+    "description": "Single cup from the full jebena ceremony."
+  },
+  {
+    "id": 10,
+    "name": "Tej",
+    "price": 90,
+    "currency": "ETB",
+    "category": "Drink",
+    "spicy": false,
+    "description": "Honey wine served in a berele flask."
+  },
+  {
+    "id": 11,
+    "name": "Ambo Water",
+    "price": 30,
+    "currency": "ETB",
+    "category": "Drink",
+    "spicy": false,
+    "description": "Sparkling mineral water, chilled."
+  },
+  {
+    "id": 12,
+    "name": "Baklava",
+    "price": 80,
+    "currency": "ETB",
+    "category": "Dessert",
+    "spicy": false,
+    "description": "Layered pastry with walnut and honey."
+  },
+  {
+    "id": 13,
+    "name": "Kolo Cake",
+    "price": 120,
+    "currency": "ETB",
+    "category": "Dessert",
+    "spicy": false,
+    "description": "Sponge cake topped with roasted barley crunch."
+  }
+]
