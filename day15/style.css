@@ -1,0 +1,12 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  transition: transform 100ms ease-out;
+}
