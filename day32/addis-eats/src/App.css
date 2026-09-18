@@ -564,3 +564,16 @@ a {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
+
+/* Render counters --------------------------------------------------------- */
+
+.badge__renders,
+.dish__renders {
+  font-family: var(--mono);
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.dish__renders {
+  width: 100%;
+}

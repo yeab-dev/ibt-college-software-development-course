@@ -1,8 +1,19 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useCart } from "../cart/useCart";
+import {
+  selectItems,
+  selectRemoveItem,
+  selectTotal,
+  useCartStore,
+} from "../cart/cartStore";
 
 function Cart() {
-  const { items, total, dispatch } = useCart();
+  // One selector per value. The temptation is to write
+  // useCartStore((s) => ({ items: s.items, total: … })) and destructure it in
+  // one line — but that builds a fresh object on every call, so the comparison
+  // always says "changed" and Zustand behaves exactly like context.
+  const items = useCartStore(selectItems);
+  const total = useCartStore(selectTotal);
+  const removeItem = useCartStore(selectRemoveItem);
   const navigate = useNavigate();
 
   if (items.length === 0) {
@@ -37,7 +48,7 @@ function Cart() {
               type="button"
               className="checkout__remove"
               aria-label={`Remove one ${item.name}`}
-              onClick={() => dispatch({ type: "remove", id: item.id })}
+              onClick={() => removeItem(item.id)}
             >
               −
             </button>

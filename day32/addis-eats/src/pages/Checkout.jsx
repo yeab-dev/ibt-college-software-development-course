@@ -1,13 +1,23 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/useAuth";
-import { useCart } from "../cart/useCart";
+import {
+  selectClear,
+  selectCount,
+  selectTotal,
+  useCartStore,
+} from "../cart/cartStore";
 
 // This component never checks whether anyone is signed in. RequireAuth does
 // that in App.jsx, so by the time Checkout renders there is always a user.
 function Checkout() {
+  // The deliverable's brief for this file: "reads the total and calls clear
+  // after ordering". The session still comes from context — that is the one
+  // this application keeps, and useAuth is what guards it.
   const { user } = useAuth();
-  const { items, total, dispatch } = useCart();
+  const total = useCartStore(selectTotal);
+  const count = useCartStore(selectCount);
+  const clear = useCartStore(selectClear);
   const [address, setAddress] = useState("");
   const [placed, setPlaced] = useState(null);
   const navigate = useNavigate();
@@ -15,7 +25,7 @@ function Checkout() {
   function placeOrder(event) {
     event.preventDefault();
     setPlaced({ reference: `AE-${Date.now().toString().slice(-6)}`, total });
-    dispatch({ type: "clear" });
+    clear();
   }
 
   if (placed) {
@@ -39,7 +49,7 @@ function Checkout() {
     );
   }
 
-  if (items.length === 0) {
+  if (count === 0) {
     return (
       <main className="prose">
         <h2>Checkout</h2>

@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { useCart } from "../cart/useCart";
+import { selectAddItem, useCartStore } from "../cart/cartStore";
 import { useFetch } from "../hooks/useFetch";
 
 function DishDetail() {
@@ -7,7 +7,9 @@ function DishDetail() {
   // in the path — here `slug`, from path="menu/:slug". Every value is a
   // string, even when it looks like a number.
   const { slug } = useParams();
-  const { dispatch } = useCart();
+  // This screen only writes. It subscribes to the action, which never changes
+  // identity, so nothing anyone does to the cart can re-render it.
+  const addItem = useCartStore(selectAddItem);
 
   // Because `slug` is in the URL passed to useFetch, it is in that hook's
   // dependency array too. Navigating from Doro Wat to Kitfo refetches on its
@@ -62,7 +64,7 @@ function DishDetail() {
       <button
         type="button"
         className="dish__add"
-        onClick={() => dispatch({ type: "add", dish })}
+        onClick={() => addItem(dish)}
       >
         Add to order
       </button>

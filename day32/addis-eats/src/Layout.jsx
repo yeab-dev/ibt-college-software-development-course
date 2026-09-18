@@ -2,6 +2,7 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 import CartBadge from "./components/CartBadge";
 import ThemePicker from "./components/ThemePicker";
 import { useAuth } from "./auth/useAuth";
+import { useRenderCount } from "./hooks/useRenderCount";
 
 const TABS = [
   { to: "/", label: "Home", end: true },
@@ -12,6 +13,19 @@ const TABS = [
 
 function Layout() {
   const { user, signOut } = useAuth();
+
+  // Layout reads the session and nothing else.
+  //
+  // Worth measuring before you believe the usual story. This number does not
+  // move when you add a dish — and it did not move under CartProvider either.
+  // "Context re-renders everything below it" is not true: only components that
+  // actually call useContext re-render, and Layout arrived as the `children`
+  // prop of a parent that was not itself re-rendering, so React reused the
+  // element and skipped it.
+  //
+  // The cost of context was never here. It was in the thirteen Dish cards that
+  // really did read the cart. See the README.
+  const renders = useRenderCount("Layout");
 
   return (
     <>
@@ -72,7 +86,10 @@ function Layout() {
       </div>
 
       <footer className="sitefoot">
-        <p>CodeOps · Day 31 · React Router v6</p>
+        <p>
+          CodeOps · Day 32 · Context &amp; state management ·{" "}
+          <strong>Layout has rendered {renders}×</strong>
+        </p>
       </footer>
     </>
   );
