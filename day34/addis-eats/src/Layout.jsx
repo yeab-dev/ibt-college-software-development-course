@@ -1,0 +1,109 @@
+import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
+import ErrorBoundary from "./ErrorBoundary";
+import Probe from "./dev/Probe";
+import { PageCrashed } from "./ui/Fallbacks";
+import CartBadge from "./components/CartBadge";
+import ThemePicker from "./components/ThemePicker";
+import { useAuth } from "./auth/useAuth";
+import { useRenderCount } from "./hooks/useRenderCount";
+
+const TABS = [
+  { to: "/", label: "Home", end: true },
+  { to: "/menu", label: "Menu" },
+  { to: "/cart", label: "Cart" },
+  { to: "/checkout", label: "Checkout" },
+];
+
+function Layout() {
+  const { user, signOut } = useAuth();
+  const { pathname } = useLocation();
+
+  // Layout reads the session and nothing else.
+  //
+  // Worth measuring before you believe the usual story. This number does not
+  // move when you add a dish — and it did not move under CartProvider either.
+  // "Context re-renders everything below it" is not true: only components that
+  // actually call useContext re-render, and Layout arrived as the `children`
+  // prop of a parent that was not itself re-rendering, so React reused the
+  // element and skipped it.
+  //
+  // The cost of context was never here. It was in the thirteen Dish cards that
+  // really did read the cart. See the README.
+  const renders = useRenderCount("Layout");
+
+  return (
+    <>
+      <header className="topbar">
+        <div>
+          {/* Link, never <a href>. An anchor asks the server for a file that
+              does not exist, reloads everything, and empties the cart. */}
+          <Link className="topbar__brand" to="/">
+            <h1>Addis Eats</h1>
+          </Link>
+          <p className="topbar__tagline">
+            Six screens, six URLs, one cart that survives all of them.
+          </p>
+        </div>
+        <div className="topbar__tools">
+          <ThemePicker />
+          <Probe id="CartBadge">
+            <CartBadge />
+          </Probe>
+        </div>
+      </header>
+
+      <nav className="tabs" aria-label="Main">
+        {TABS.map((tab) => (
+          // NavLink is a Link that also knows whether it is the open page.
+          // `end` stops "/" matching every URL that begins with a slash.
+          <NavLink
+            key={tab.to}
+            to={tab.to}
+            end={tab.end}
+            className={({ isActive }) =>
+              isActive ? "tabs__link tabs__link--active" : "tabs__link"
+            }
+          >
+            {tab.label}
+          </NavLink>
+        ))}
+
+        <span className="tabs__session">
+          {user ? (
+            <>
+              {user.name}
+              <button type="button" className="tabs__signout" onClick={signOut}>
+                Sign out
+              </button>
+            </>
+          ) : (
+            <NavLink to="/login" className="tabs__link">
+              Sign in
+            </NavLink>
+          )}
+        </span>
+      </nav>
+
+      <div className="page">
+        {/* The hole in the frame. Navigating from /menu to /cart swaps only
+            what renders here — the header above is never rebuilt, so anything
+            it is holding (an open search box, a scroll position) stays put. */}
+        {/* Day 34. Whatever screen is open can fail on its own — including a
+            lazy chunk that never arrives — and the header above survives.
+            resetKey: navigating to another screen clears the fallback. */}
+        <ErrorBoundary name="page" fallback={PageCrashed} resetKey={pathname}>
+          <Outlet />
+        </ErrorBoundary>
+      </div>
+
+      <footer className="sitefoot">
+        <p>
+          CodeOps · Day 34 · Boundaries, lazy loading &amp; portals ·{" "}
+          <strong>Layout has rendered {renders}×</strong>
+        </p>
+      </footer>
+    </>
+  );
+}
+
+export default Layout;

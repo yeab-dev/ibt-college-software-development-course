@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Addis Eats</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Outside #root on purpose: modals portal here, clear of every card's
+         overflow and stacking context. It must exist before React renders. -->
+    <div id="modal-root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
