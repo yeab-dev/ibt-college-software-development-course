@@ -348,7 +348,7 @@ script. All four rows above were measured the same way, on the same machine.)
 | What did First Load JS for `/menu` do between Day 35 and today? | Up from 84.0 kB (Vite, Day 34's build) to 144.2 kB gzip. Above, with why |
 | Does the checkout still work with JavaScript disabled? | Yes: errors beside the fields, the order placed, the receipt shown |
 | Can you find any secret in the JavaScript the browser downloaded? | No |
-| Does it build and run from a fresh clone? | See [Verified](#verified) |
+| Does it build and run from a fresh clone? | Yes: the same route table, and all 60 checks passed on the clone's build. See [Verified](#verified) |
 
 The slides' review questions:
 
@@ -415,8 +415,20 @@ In headless Chromium (playwright-core), **60 checks, all passed**:
 The only console errors were the two the suite causes on purpose: B's 404
 and B's 403.
 
-**From a fresh clone:** see the next commit. The verification ran on a clone
-of this commit and is recorded there.
+**From a fresh clone.** After committing (`c22018d`), the repository was
+cloned into a scratch directory. In `day40/addis-eats` the steps were exactly
+those in [Run it](#run-it): `npm ci` (341 packages), then
+`cp .env.example .env.local` with a new random secret, then `npm run build`,
+then `npm run start -p 3040`.
+
+- The clone holds no `.env.local`, `.data/`, `.next/` or `node_modules/`, only
+  `.env.example`.
+- Its route table is identical to the one above.
+- The same suites ran against it: 39 + 8 + 3 + 10, all passed.
+- The curl transcript is identical apart from timestamps and the action id,
+  which a new build changes. That includes the attack: 403, 401, 401, 404,
+  200, 409.
+- Its bundle does not contain its secret.
 
 ## Deviations, honestly
 
