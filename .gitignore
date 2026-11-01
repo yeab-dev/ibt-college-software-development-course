@@ -3,3 +3,11 @@ __pycache__/
 *.py[cod]
 .hintrc
 demo.js
+
+# Node dependencies and build output (every JS project in the course)
+node_modules/
+dist/
+.next/
+
+# Separate git repository with its own remote; not part of this repo
+contributions/next-lifedrop-capstone/
