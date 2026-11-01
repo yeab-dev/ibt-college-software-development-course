@@ -209,7 +209,7 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/yeab-dev/ibt-college-software-development-course
-cd projects/addis_bank
+cd ibt-college-software-development-course/M01-foundation/projects/addis_bank
 ```
 
 Run:
