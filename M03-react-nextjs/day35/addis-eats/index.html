@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Addis Eats</title>
+  </head>
+  <body>
+    <!-- Day 35, "throttle to Slow 3G". Until the JavaScript arrives React has
+         rendered nothing, so the page would be blank. This is plain HTML, in
+         the first response; createRoot().render() replaces it on its first
+         render, so it never needs removing by hand. -->
+    <div id="root">
+      <p class="state boot" role="status">Loading Addis Eats&hellip;</p>
+    </div>
+    <!-- Outside #root on purpose: modals portal here, clear of every card's
+         overflow and stacking context. It must exist before React renders. -->
+    <div id="modal-root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
