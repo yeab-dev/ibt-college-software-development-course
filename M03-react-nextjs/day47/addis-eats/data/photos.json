@@ -1,0 +1,100 @@
+{
+  "hero": {
+    "src": "/dishes/platter.jpg",
+    "width": 1200,
+    "height": 800,
+    "alt": "A round tray of injera topped with eight different stews and a salad, rolls of injera around the edge",
+    "credit": "Photo: Artem.G, CC BY-SA 4.0, via Wikimedia Commons",
+    "source": "https://commons.wikimedia.org/wiki/File:Injera_with_eight_kinds_of_stew.jpg"
+  },
+  "dishes": {
+    "doro-wat": {
+      "src": "/dishes/doro-wat.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Doro wat on injera: a chicken leg and a boiled egg coated in red berbere sauce",
+      "credit": "Photo: Edsel Little, CC BY-SA 2.0, via Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Injera_and_doro_wat.jpg"
+    },
+    "shiro": {
+      "src": "/dishes/shiro.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Shiro in a small black clay pot, with a fold of injera beside it",
+      "credit": "Photo: Yonihahasis, CC BY-SA 4.0, via Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Shiro_wet.jpg"
+    },
+    "tibs": {
+      "src": "/dishes/tibs.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Tibs: beef pieces topped with green chilli in a clay burner, rolled injera around it",
+      "credit": "Photo: Jean Rebiffé, CC BY-SA 4.0, via Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Tibs_in_Yod_Abyssinia.jpg"
+    },
+    "kitfo": {
+      "src": "/dishes/kitfo.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Kitfo plated as a neat red round topped with ayib, beside a small round of injera and a smear of sauce",
+      "credit": "Photo: Michael T., CC BY-SA 2.0, via Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Kitfo_(Ethiopian_Tartar).jpg"
+    },
+    "beyaynetu": {
+      "src": "/dishes/beyaynetu.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Beyaynetu: a large round of injera covered with small heaps of vegetable stews, green chillies and rolled injera",
+      "credit": "Photo: Abelzemichael, CC BY-SA 4.0, via Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Beyaynetu_Enjera.jpg"
+    },
+    "injera": {
+      "src": "/dishes/injera.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Two rounds of injera, their surface full of tiny holes, on a woven basket",
+      "credit": "Photo: Edsel Little, CC BY-SA 2.0, via Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Injera_from_ivory_teff.jpg"
+    },
+    "ayib": {
+      "src": "/dishes/ayib.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "A mound of white ayib on injera, between dark stewed greens and a bowl of red sauce",
+      "credit": "Photo: stu_spivack, CC BY-SA 2.0, via Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Ayib_and_gomen.jpg"
+    },
+    "gomen": {
+      "src": "/dishes/gomen.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Gomen, dark stewed collard greens, between yellow split peas and red lentils on injera",
+      "credit": "Photo: stu_spivack, CC BY-SA 2.0, via Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:KIK_ALICHA,_MISIR,_GOMEN_and_TIKIL_GOMEN.jpg"
+    },
+    "buna": {
+      "src": "/dishes/buna.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Two women at a coffee ceremony, one roasting green coffee beans beside a tray of small cups",
+      "credit": "Photo: Steve Evans, CC BY 2.0, via Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Ethiopian_Coffee_Ceremony_011.jpg"
+    },
+    "tej": {
+      "src": "/dishes/tej.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Golden tej in a round-bottomed berele flask on a red tablecloth",
+      "credit": "Photo: Not home at English Wikipedia, public domain, via Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:A_glass_of_Ethiopian_mead_(tej).jpg"
+    },
+    "baklava": {
+      "src": "/dishes/baklava.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Three pieces of layered baklava on a white plate, with a fork",
+      "credit": "Photo: Kultigin, public domain, via Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Baklava_-_Turkish_special,_80-ply.JPEG"
+    }
+  }
+}
