@@ -14,6 +14,8 @@ The user's coursework for the IBT College **CodeOps Full Stack Software Developm
 
 New modules get their own `M0N-<topic>/` folder. Inside a module, `dayNN/` holds that day's class work, and `projects/`, `miniprojects/` and `assignments/` hold multi-day or graded work. `contributions/next-lifedrop-capstone` is a separate git repository (ignored here). Don't commit to it from this repo.
 
+The user's own Module 3 capstone (Days 35–50) is **Hakim**, a Next.js app in its own repository at `/home/yeab/hakim` (github.com/yeab-dev/hakim), deployed to Vercel. It lives outside this repo on purpose; don't copy or move it in.
+
 **Addis Eats** is the project that runs through Module 3. Each `M03-react-nextjs/dayNN/addis-eats/` is a frozen, self-contained snapshot of the app at the end of that day: the whole project is copied forward and then extended. Days 26–34 are Vite + React; from Day 36 on it's Next.js. Don't edit an earlier day's snapshot unless asked. `M03-react-nextjs/projects/addis-eats/` is a working copy used to redo an earlier day (currently Day 27).
 
 ## Course material and up-to-date docs
