@@ -1,0 +1,26 @@
+[
+  {
+    "id": "usr_almaz",
+    "name": "Almaz Bekele",
+    "phone": "0911223344",
+    "role": "customer",
+    "passwordHash": "scrypt$16384$8$1$8pBZ2rKci2s7qrTYRM-7bQ$UoKhw_XoEEPWtqyuCyyML86neP_1bxnP3yW8-JUIMMM",
+    "createdAt": "2026-10-23T09:00:00.000Z"
+  },
+  {
+    "id": "usr_bereket",
+    "name": "Bereket Haile",
+    "phone": "0922334455",
+    "role": "customer",
+    "passwordHash": "scrypt$16384$8$1$_D5ptLjfNzJ9Fp3-mXB6cA$RFQLmUcJq7z8sAdMuRUJENzDuns22obWULrRKIHi5gk",
+    "createdAt": "2026-10-23T09:00:00.000Z"
+  },
+  {
+    "id": "usr_selam",
+    "name": "Selam Tesfaye",
+    "phone": "0910101010",
+    "role": "staff",
+    "passwordHash": "scrypt$16384$8$1$LfGsRVwWlnwc2wM6HVz_qg$soAa31mQcUEpjK6CpJbtXx8EksaNPMfDRXdNxNFp9DE",
+    "createdAt": "2026-10-23T09:00:00.000Z"
+  }
+]
