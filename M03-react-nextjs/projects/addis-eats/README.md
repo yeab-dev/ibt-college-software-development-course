@@ -1,16 +1,22 @@
-# React + Vite
+# Addis Eats: Day 27, Props & Rendering Patterns
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+One or two sentences: what the app shows today.
 
-Currently, two official plugins are available:
+## Run it
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The commands (install, dev).
 
-## React Compiler
+## Components
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `Dish`: what it shows, its props (required vs optional, defaults), the spicy badge
+- `Card`: what it's for, and why it uses `children`
+- `Menu`: filtering by category, empty state, keys
 
-## Expanding the ESLint configuration
+## Data
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+`src/data.js`: the fields each dish has.
+
+## Notes
+
+- PropTypes in React 19: what you found, and why you also added JSDoc + jsconfig.json
+- Anything else you'd want a reviewer to know (the `0 &&` guard, why keys are ids, not indexes)
