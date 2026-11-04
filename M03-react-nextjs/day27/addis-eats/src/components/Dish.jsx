@@ -1,25 +1,29 @@
 import PropTypes from "prop-types";
-import Card from "./Card";
-
-function Dish({ name, price, spicy, currency = "ETB" }) {
+/**
+ * @param {object} props
+ * @param {string} props.name
+ * @param {number} props.price
+ * @param {string} [props.currency]
+ * @param {boolean} [props.spicy]
+ */
+function Dish({ name, price, currency = "ETB", spicy = false }) {
   return (
-    <Card>
-      <h2>{name}</h2>
-
+    <div className="dish">
+      <h3>
+        {name} {Boolean(spicy) && <span className="badge">🌶 Spicy</span>}
+      </h3>
       <p>
         {price} {currency}
       </p>
-
-      {spicy === true && <span className="spicy-badge">🌶️ Spicy</span>}
-    </Card>
+    </div>
   );
 }
 
 Dish.propTypes = {
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  spicy: PropTypes.bool,
   currency: PropTypes.string,
+  spicy: PropTypes.bool,
 };
 
 export default Dish;
