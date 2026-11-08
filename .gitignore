@@ -8,6 +8,7 @@ demo.js
 node_modules/
 dist/
 .next/
+*.tsbuildinfo
 
 # Separate git repository with its own remote; not part of this repo
 contributions/next-lifedrop-capstone/
