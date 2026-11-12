@@ -1,0 +1,53 @@
+@host = http://localhost:3000/api
+
+### ─── RESTAURANTS ──────────────────────────────────────
+
+### List every restaurant
+GET {{host}}/restaurants
+
+### Filter by delivery area
+GET {{host}}/restaurants?area=Bole
+
+### One restaurant
+GET {{host}}/restaurants/1
+
+### A restaurant that does not exist → 404
+GET {{host}}/restaurants/99
+
+### Create a restaurant
+POST {{host}}/restaurants
+Content-Type: application/json
+
+{ "name": "Sishu", "area": "Kazanchis" }
+
+### Invalid area → 400
+POST {{host}}/restaurants
+Content-Type: application/json
+
+{ "name": "Test Place", "area": "Adama" }
+
+### Unknown field stripped (whitelist) → no "hacked" in response
+POST {{host}}/restaurants
+Content-Type: application/json
+
+{ "name": "Clean Place", "area": "Bole", "hacked": true }
+
+### ─── DISHES ───────────────────────────────────────────
+
+### List every dish
+GET {{host}}/dishes
+
+### Filter dishes by restaurant
+GET {{host}}/dishes?restaurantId=1
+
+### One dish
+GET {{host}}/dishes/1
+
+### A dish that does not exist → 404
+GET {{host}}/dishes/99
+
+### Create a dish
+POST {{host}}/dishes
+Content-Type: application/json
+
+{ "restaurantId": 1, "name": "Injera Firfir", "priceSantim": 18000 }
